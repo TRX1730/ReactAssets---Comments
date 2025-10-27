@@ -1,6 +1,4 @@
 ```markdown
-# 💬 React Blog Comments System
-
 
 ## 🚀 Szybki Start
 
