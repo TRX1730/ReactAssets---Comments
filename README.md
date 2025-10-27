@@ -1,16 +1,137 @@
-# React + Vite
+```markdown
+# 💬 React Blog Comments System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Prosty i piękny system komentarzy dla blogów w React! Dodaj komentarze do swojego bloga w 2 minuty!
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-18.2.0-61dafb)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Easy](https://img.shields.io/badge/DLA_KAŻDEGO-✓-success)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Szybki Start
 
-## React Compiler
+### Instalacja i uruchomienie demo:
+```bash
+# Sklonuj repozytorium
+git clone https://github.com/TRX1730/ReactAssets---Comments.git
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Wejdź do folderu
+cd ReactAssets---Comments
 
-## Expanding the ESLint configuration
+# Zainstaluj zależności
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Uruchom demo
+npm run dev
+```
+
+
+## 📦 Jak Dodać do Swojego Projektu
+
+### Krok 1: Skopiuj te pliki do swojego projektu:
+```
+src/
+├── components/
+│   ├── CommentsProvider.jsx
+│   ├── CommentForm.jsx
+│   ├── CommentList.jsx
+│   └── Comment.jsx
+└── hooks/
+    └── useComments.js
+```
+
+### Krok 2: Dodaj 3 linijki kodu:
+```jsx
+// 1. Importuj komponenty
+import { CommentsProvider } from './components/CommentsProvider';
+import { CommentForm } from './components/CommentForm';
+import { CommentList } from './components/CommentList';
+
+function BlogPost() {
+  return (
+    // 2. Owiń swoją aplikację CommentsProvider
+    <CommentsProvider postId="unikalny-id-postu">
+      
+      {/* 3. Dodaj formularz i listę komentarzy */}
+      <CommentForm />
+      <CommentList />
+      
+    </CommentsProvider>
+  );
+}
+```
+
+
+## 🎯 Co Dostajesz?
+
+✅ **Formularz komentarza** - 
+✅ **Lista komentarzy** -
+✅ **Usuwanie komentarzy** -
+✅ **Like'owanie** - 
+✅ **Zapis w LocalStorage** -
+✅ **Responsywny design** - 
+✅ **Piękny UI** - 
+
+## 🎨 Przykład Użycia
+
+```jsx
+import React from 'react';
+import { CommentsProvider, CommentForm, CommentList } from './components';
+
+function BlogPost({ post }) {
+  return (
+    <div>
+      {/* Twój post bloga */}
+      <article>
+        <h1>{post.title}</h1>
+        <p>{post.content}</p>
+      </article>
+      
+      {/* System komentarzy */}
+      <CommentsProvider postId={post.id}>
+        <CommentForm />
+        <CommentList />
+      </CommentsProvider>
+    </div>
+  );
+}
+```
+
+## 🔧 Customizacja
+
+### Zmień kolory - edytuj `Comment.jsx`:
+```jsx
+// Znajdź te style i zmień kolory:
+style={{
+  backgroundColor: '#ffffff',  // Tło komentarza
+  border: '2px solid #e2e8f0', // Ramka
+  color: '#4a5568'             // Kolor tekstu
+}}
+```
+
+### Dodaj więcej pól w formularzu:
+```jsx
+// W CommentForm.jsx dodaj nowe inputy:
+<input
+  type="email"
+  placeholder="Email"
+  // ... reszta kodu
+/>
+```
+
+
+## 🏗️ Struktura
+
+```
+blog-comments/
+├── src/
+│   ├── components/
+│   │   ├── CommentsProvider.jsx  # Zarządza komentarzami
+│   │   ├── CommentForm.jsx       # Formularz dodawania
+│   │   ├── CommentList.jsx       # Lista komentarzy
+│   │   └── Comment.jsx           # Pojedynczy komentarz
+│   ├── hooks/
+│   │   └── useComments.js        # Hook do używania komentarzy
+│   └── App.jsx                   # Przykład użycia
+├── package.json
+└── README.md
+```
