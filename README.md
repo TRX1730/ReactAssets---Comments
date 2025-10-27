@@ -1,11 +1,6 @@
 ```markdown
 # 💬 React Blog Comments System
 
-Prosty i piękny system komentarzy dla blogów w React! Dodaj komentarze do swojego bloga w 2 minuty!
-
-![React](https://img.shields.io/badge/React-18.2.0-61dafb)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Easy](https://img.shields.io/badge/DLA_KAŻDEGO-✓-success)
 
 ## 🚀 Szybki Start
 
